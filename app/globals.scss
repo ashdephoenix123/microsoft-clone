@@ -215,7 +215,8 @@ footer {
 
     &-lists{
       font-size: .7rem;
-      font-weight: 300;
+      font-weight: 400;
+      color: var(--text2);
     }
 
     @media only screen and (max-width: 520px) {
@@ -228,7 +229,7 @@ footer {
 
     &-1 {
       h3 {
-        font-size: .85rem;
+        font-size: .9rem;
         color: var(--text2);
         font-weight: 500;
         margin-bottom: .5rem;
