@@ -27,7 +27,7 @@ body {
   position: relative;
 }
 
-.dropdown{
+.dropdown {
   position: absolute;
   background: var(--text3);
   width: 85%;
@@ -37,6 +37,7 @@ body {
   margin: auto;
   padding: 1.5rem;
 }
+
 .bg1 {
   background-color: var(--bg1);
 }
@@ -48,17 +49,20 @@ body {
 .fontsm {
   font-size: 0.85rem;
 }
-.fontxs{
+
+.fontxs {
   font-size: 0.8rem;
 }
 
 .text1 {
   color: var(--text1);
 }
-.text2{
+
+.text2 {
   color: var(--text2);
 }
-.text4{
+
+.text4 {
   color: var(--text4);
 }
 
@@ -213,7 +217,7 @@ footer {
     align-items: start;
     text-transform: capitalize;
 
-    &-lists{
+    &-lists {
       font-size: .7rem;
       font-weight: 400;
       color: var(--text2);
@@ -251,16 +255,34 @@ footer {
   }
 
 }
-.socials{
+
+.socials {
   width: 2rem;
   display: block;
 }
-.copy{
+
+.copy {
   font-size: .7rem;
   font-weight: 300;
 }
-.dropdownGrid{
+
+.dropdownGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 1rem;
+}
+
+.carousel {
+  width: 100%;
+  height: 60vh;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 10px !important;
 }

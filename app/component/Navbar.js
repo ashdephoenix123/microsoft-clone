@@ -48,7 +48,7 @@ const Navbar = () => {
                 <div className="container">
                     <div className="py-3 flex items-center fontsm">
                         <Link href="#" className="flex">
-                            <Image src="/macrosoft.png" width={30} height={10} className='mr-1'></Image>
+                            <Image src="/macrosoft.png" width={30} height={10} className='mr-1' alt='logo'></Image>
                             <span className='text-xl font-semibold tracking-tight text-gray-700'>Microsoft</span>
                         </Link>
                         {!search ?

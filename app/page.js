@@ -2,11 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Card from "./component/Card";
 import { FaFacebookF, FaTwitter, FaYoutube } from 'react-icons/fa'
+import Carousel from "./component/Carousel";
 export default async function Home() {
 
   return (
     <>
-      <Image width={2000} height={60} src="/homeimage2.jpg" className="w-full h-[60vh] object-cover" />
+      {/* <Image width={2000} height={60} src="/homeimage2.jpg" className="w-full h-[60vh] object-cover" /> */}
+      <Carousel />
       <div className="container">
         <div className="flex justify-center py-4 my-16">
           <div className="flex flex-col items-center mx-10">
@@ -59,7 +61,7 @@ export default async function Home() {
             <p className="my-6">Designed for hybrid work. Powerful for employees. Consistent for IT. Secure for all.</p>
             <button className="bg2 py-2 px-4 text-white self-start">Learn more</button>
           </div>
-          <Image src={'/11.png'} width={500} height={500}></Image>
+          <Image src={'/11.png'} width={500} height={500} alt="11.png"></Image>
         </div>
         <h2 className="text-4xl font-semibold mb-4">For Business</h2>
         <div className="cardContainer">
@@ -89,7 +91,7 @@ export default async function Home() {
           />
         </div>
         <div className="relative mt-20 mb-16">
-          <Image src={'/river.jpg'} width={500} height={500} className="w-full h-[60vh] object-cover"></Image>
+          <Image src={'/river.jpg'} width={500} height={500} className="w-full h-[60vh] object-cover" alt="river"></Image>
           <div className="px-12 py-16 bg-white absolute top-16 left-16 width1">
             <h3 className="text-4xl font-semibold">Enabling a more sustainable future</h3>
             <p className="my-6">Discover how Microsoft is progressing to become carbon negative, water positive, and zero waste—all while protecting more land than we use.</p>
