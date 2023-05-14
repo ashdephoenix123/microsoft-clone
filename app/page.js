@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Card from "./component/Card";
-import { FaFacebookF, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 import Carousel from "./component/Carousel";
 export default async function Home() {
 
@@ -100,9 +100,15 @@ export default async function Home() {
         </div>
         <div className="flex items-center mb-24">
           <p className="mr-3">Follow Microsoft</p>
-          <FaFacebookF className="mx-3" size={22} />
-          <FaTwitter className="mx-3" size={22} />
-          <FaYoutube className="mx-3" size={25} />
+          <Link target="_blank" href={'https://www.instagram.com/akashsarki_/'}>
+            <FaInstagram className="mx-3" size={25} />
+          </Link>
+          <Link target="_blank" href={'https://twitter.com/akashsarki_'}>
+            <FaTwitter className="mx-3" size={25} />
+          </Link>
+          <Link target="_blank" href={'https://www.linkedin.com/in/akashsarki/'}>
+            <FaLinkedinIn className="mx-3" size={25} />
+          </Link>
         </div>
       </div>
     </>
