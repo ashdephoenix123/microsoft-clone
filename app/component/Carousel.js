@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
@@ -18,11 +17,12 @@ const Carousel = () => {
                 slidesPerView={1}
                 autoplay={{ delay: 3000 }}
                 pagination={{ clickable: true }}
+                speed={2000}
                 className='carousel'
             >
-                <SwiperSlide><Image className='object-cover' alt='slider1' src="/homeimage2.jpg" fill></Image></SwiperSlide>
-                <SwiperSlide><Image className='object-cover' alt='slider2' src="/11.jpg" fill></Image></SwiperSlide>
-                <SwiperSlide><Image className='object-cover' alt='slider3' src="/12.jpg" fill></Image></SwiperSlide>
+                <SwiperSlide><Image className='object-cover object-bottom' alt='slider1' src="/20.jpg" fill></Image></SwiperSlide>
+                <SwiperSlide><Image className='object-cover object-bottom' alt='slider2' src="/16.jpg" fill></Image></SwiperSlide>
+                <SwiperSlide><Image className='object-cover' alt='slider3' src="/22.jpg" fill></Image></SwiperSlide>
             </Swiper>
         </>
     )
