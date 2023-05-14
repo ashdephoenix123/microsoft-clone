@@ -9,8 +9,8 @@ export default async function Home() {
     <>
       {/* <Image width={2000} height={60} src="/homeimage2.jpg" className="w-full h-[60vh] object-cover" /> */}
       <Carousel />
-      <div className="container">
-        <div className="flex justify-center py-4 my-16">
+      <div className="container2">
+        <div className="flex flex-wrap gap-y-6 justify-center py-4 my-16">
           <div className="flex flex-col items-center mx-10">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="40px" height="40px">    <path d="M 5 4 C 4.448 4 4 4.447 4 5 L 4 24 L 24 24 L 24 4 L 5 4 z M 26 4 L 26 24 L 46 24 L 46 5 C 46 4.447 45.552 4 45 4 L 26 4 z M 4 26 L 4 45 C 4 45.553 4.448 46 5 46 L 24 46 L 24 26 L 4 26 z M 26 26 L 26 46 L 45 46 C 45.552 46 46 45.553 46 45 L 46 26 L 26 26 z" /></svg>
             <Link className="mt-2 text1 font-semibold underline" href={'#'}>All New Microsoft</Link>
@@ -55,8 +55,8 @@ export default async function Home() {
             imglink="/bing.jpeg"
           />
         </div>
-        <div className="bg1 flex px-24 py-24 justify-between my-20">
-          <div className="flex flex-col justify-center basis-1/3">
+        <div className="bg1 flex px-24 py-24 my-20 relative bg3">
+          <div className="flex flex-col basis-1/3 laptopdiv">
             <h3 className="text-4xl font-semibold">Windows 11 for Business</h3>
             <p className="my-6">Designed for hybrid work. Powerful for employees. Consistent for IT. Secure for all.</p>
             <button className="bg2 py-2 px-4 text-white self-start">Learn more</button>
@@ -90,9 +90,9 @@ export default async function Home() {
             imglink="/10.jpg"
           />
         </div>
-        <div className="relative mt-20 mb-16">
+        <div className="mt-20 mb-16 relative">
           <Image src={'/river.jpg'} width={500} height={500} className="w-full h-[60vh] object-cover" alt="river"></Image>
-          <div className="px-12 py-16 bg-white absolute top-16 left-16 width1">
+          <div className="px-12 py-16 bg-white width1 translateIt riverdiv">
             <h3 className="text-4xl font-semibold">Enabling a more sustainable future</h3>
             <p className="my-6">Discover how Microsoft is progressing to become carbon negative, water positive, and zero waste—all while protecting more land than we use.</p>
             <button className="bg2 py-2 px-4 text-white self-start">Learn about our progress</button>

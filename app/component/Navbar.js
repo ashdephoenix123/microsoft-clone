@@ -8,12 +8,18 @@ import { SlArrowRight } from 'react-icons/sl'
 import { VscSearch } from 'react-icons/vsc'
 import { BsCart3 } from 'react-icons/bs'
 import { HiOutlineUserPlus } from 'react-icons/hi2'
+import { HiBars3 } from 'react-icons/hi2'
+import { RxCross2 } from 'react-icons/rx'
+import { SlArrowDown, SlArrowUp } from 'react-icons/sl'
 
 const Navbar = () => {
     const [dropdown, setdropdown] = useState(false)
     const [search, setsearch] = useState(false)
+    const [toggle, setToggle] = useState(false)
+    const [arrow, setArrow] = useState(false)
     const ref = useRef(null)
     const searchref = useRef(null);
+    const toggleref = useRef(null);
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
@@ -28,7 +34,9 @@ const Navbar = () => {
         }
         if (searchref.current && !searchref.current.contains(event.target)) {
             setsearch(false);
-            console.log(event.target)
+        }
+        if (toggleref.current && !toggleref.current.contains(event.target)) {
+            setToggle(false);
         }
     };
 
@@ -45,28 +53,39 @@ const Navbar = () => {
     return (
         <>
             <nav className='navbar shadow-md relative'>
-                <div className="container">
-                    <div className="py-3 flex items-center fontsm">
-                        <Link href="#" className="flex">
+                <div className="container2">
+                    <div className="py-3 flex items-center fontsm bp1 relative">
+                        <div className='hide3 mr-auto'>
+                            <div onClick={() => { setToggle(prev => !prev) }}>
+                                {
+                                    !toggle ? <HiBars3 size={25} className='mr-3 cursor-pointer' /> : <RxCross2 size={25} className='mr-3 font-thin cursor-pointer' />
+                                }
+                            </div>
+                            <ul>
+                                <li className='flex items-center mr-4 cursor-pointer' onClick={searchHandler}><div className='mr-1 border-transparent border-2 hover:border-b-black hide1'>Search</div><VscSearch size={15} /></li>
+                            </ul>
+                        </div>
+                        <Link href="#" className="flex mr-6">
                             <Image src="/macrosoft.png" width={30} height={10} className='mr-1' alt='logo'></Image>
                             <span className='text-xl font-semibold tracking-tight text-gray-700'>Microsoft</span>
                         </Link>
                         {!search ?
                             <> <ul className='flex ml-4 mr-auto'>
-                                <li className='mx-2 border-transparent border-2 hover:border-b-black'><Link href='#'>Microsoft 365</Link></li>
-                                <li className='mx-2 border-transparent border-2 hover:border-b-black'><Link href='#'>Teams</Link></li>
-                                <li className='mx-2 border-transparent border-2 hover:border-b-black'><Link href='#'>Windows</Link></li>
-                                <li className='mx-2 border-transparent border-2 hover:border-b-black'><Link href='#'>Surface</Link></li>
-                                <li className='mx-2 border-transparent border-2 hover:border-b-black'><Link href='#'>Xbox</Link></li>
-                                <li className='mx-2 border-transparent border-2 hover:border-b-black'><Link href='#'>Support</Link></li>
+                                <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#'>Microsoft 365</Link></li>
+                                <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#'>Teams</Link></li>
+                                <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#'>Windows</Link></li>
+                                <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#'>Surface</Link></li>
+                                <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#'>Xbox</Link></li>
+                                <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#'>Support</Link></li>
                             </ul>
                                 <ul className='flex'>
-                                    <li className='flex items-center mr-4 cursor-pointer' onClick={() => setdropdown(prev => !prev)}><div className='mr-1 border-transparent border-2 hover:border-b-black' >All Microsoft</div><MdOutlineKeyboardArrowDown /></li>
-                                    <li className='flex items-center mr-4 cursor-pointer' onClick={searchHandler}><div className='mr-1 border-transparent border-2 hover:border-b-black'>Search</div><VscSearch size={15} /></li>
-                                    <li className='flex items-center mr-4 cursor-pointer'><Link href={'#'} className='mr-1 border-transparent border-2 hover:border-b-black'>Cart</Link><BsCart3 size={16} /></li>
-                                    <li className='flex items-center cursor-pointer'><Link className='mr-2' href={'#'}>Sign In</Link><HiOutlineUserPlus size={20} className='border border-gray-600 rounded-2xl p-1.5 text-gray-600 box-content' /></li>
-                                </ul></> : <>
-                                <div className='ml-6 flex w-full'>
+                                    <li className='flex items-center mr-4 cursor-pointer hide2' onClick={() => setdropdown(prev => !prev)}><div className='mr-1 border-transparent border-2 hover:border-b-black'>All Microsoft</div><MdOutlineKeyboardArrowDown /></li>
+                                    <li className='flex items-center mr-4 cursor-pointer hide2' onClick={searchHandler}><div className='mr-1 border-transparent border-2 hover:border-b-black hide1'>Search</div><VscSearch size={15} /></li>
+                                    <li className='flex items-center mr-4 cursor-pointer'><Link href={'#'} className='mr-1 border-transparent border-2 hover:border-b-black hide1'>Cart</Link><BsCart3 size={16} /></li>
+                                    <li className='flex items-center cursor-pointer'><Link className='flex items-center' href={'#'}><span className='mr-1.5 hide1'>Sign In</span> <HiOutlineUserPlus size={20} className='border border-gray-600 rounded-2xl p-1.5 text-gray-600 box-content' /></Link></li>
+                                </ul>
+                            </> : <>
+                                <div className='flex w-full fillit bg-white'>
                                     <div className='flex items-center w-full' ref={searchref}>
                                         <input type="text" className='border-2 border-blue-500 focus:outline-none px-4 py-1.5 mr-2 w-full' placeholder='Search Microsoft.com' />
                                         <button className='-ml-10 p-1.5' onClick={submitInputForm}>
@@ -153,6 +172,51 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
+            }
+            {
+                toggle && <>
+                    <div className='absolute w-full h-fit bg1 z-10' ref={toggleref}>
+                        <ul>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Microsoft 365</span></Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Teams</span></Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Windows</span></Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Surface</span></Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Xbox</span></Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Support</span></Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 flex items-center justify-between'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Software</span>
+                                <div onClick={() => { setArrow((prev) => !prev) }}>
+                                    {arrow ? <SlArrowDown size={12} /> : <SlArrowUp size={12} />}
+                                </div>
+                            </Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 flex items-center justify-between'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>PCs & Devices</span>
+                                <div onClick={() => { setArrow((prev) => !prev) }}>
+                                    {arrow ? <SlArrowDown size={12} /> : <SlArrowUp size={12} />}
+                                </div>
+                            </Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 flex items-center justify-between'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Entertainment</span>
+                                <div onClick={() => { setArrow((prev) => !prev) }}>
+                                    {arrow ? <SlArrowDown size={12} /> : <SlArrowUp size={12} />}
+                                </div>
+                            </Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 flex items-center justify-between'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Business</span>
+                                <div onClick={() => { setArrow((prev) => !prev) }}>
+                                    {arrow ? <SlArrowDown size={12} /> : <SlArrowUp size={12} />}
+                                </div>
+                            </Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 flex items-center justify-between'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Developer & IT</span>
+                                <div onClick={() => { setArrow((prev) => !prev) }}>
+                                    {arrow ? <SlArrowDown size={12} /> : <SlArrowUp size={12} />}
+                                </div>
+                            </Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 flex items-center justify-between'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Other</span>
+                                <div onClick={() => { setArrow((prev) => !prev) }}>
+                                    {arrow ? <SlArrowDown size={12} /> : <SlArrowUp size={12} />}
+                                </div>
+                            </Link></li>
+                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 flex items-center justify-between'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>View Sitemap</span></Link></li>
+                        </ul>
+                    </div>
+                </>
             }
         </>
     )

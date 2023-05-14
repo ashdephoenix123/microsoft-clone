@@ -83,18 +83,18 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <div className='flex container items-center justify-between mb-4 copy'>
-                <Link href={'#'} className='flex hover:underline items-center'>
+            <div className='flex flex-wrap container2 items-center justify-between mb-4 copy'>
+                <Link href={'#'} className='flex hover:underline items-center mb-4 ml-4 sm:mb-0'>
                     <BsGlobeAmericas className='mr-2 text2' size={18}/>
                     <span>English (India)</span>
                 </Link>
-                <ul className='flex'>
+                <ul className='flex flex-wrap'>
                     <li className='mx-4 hover:underline'><Link href='#'>Contact Microsoft</Link></li>
                     <li className='mx-4 hover:underline'><Link href='#'>Privacy</Link></li>
                     <li className='mx-4 hover:underline'><Link href='#'>Terms of use</Link></li>
                     <li className='mx-4 hover:underline'><Link href='#'>Trademarks</Link></li>
                     <li className='mx-4 hover:underline'><Link href='#'>About our ads</Link></li>
-                    <li className='mx-4 hover:underline'>&copy; Microsoft Clone {year}</li>
+                    <li className='mx-4'>&copy; Microsoft Clone {year}</li>
                 </ul>
             </div>
         </footer>
