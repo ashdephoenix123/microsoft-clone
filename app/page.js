@@ -7,7 +7,6 @@ export default async function Home() {
 
   return (
     <>
-      {/* <Image width={2000} height={60} src="/homeimage2.jpg" className="w-full h-[60vh] object-cover" /> */}
       <Carousel />
       <div className="container2">
         <div className="flex flex-wrap gap-y-6 justify-center py-4 my-16">
@@ -55,7 +54,7 @@ export default async function Home() {
             imglink="/bing.jpeg"
           />
         </div>
-        <div className="bg1 flex px-24 py-24 my-20 relative bg3">
+        <div className="bg1 flex px-24 py-24 my-20 relative justify-between bg3">
           <div className="flex flex-col basis-1/3 laptopdiv">
             <h3 className="text-4xl font-semibold">Windows 11 for Business</h3>
             <p className="my-6">Designed for hybrid work. Powerful for employees. Consistent for IT. Secure for all.</p>
