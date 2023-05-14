@@ -99,7 +99,7 @@ export default async function Home() {
           </div>
         </div>
         <div className="flex items-center mb-24">
-          <p className="mr-3">Follow Microsoft</p>
+          <p className="mr-3">Follow Me</p>
           <Link target="_blank" href={'https://www.instagram.com/akashsarki_/'}>
             <FaInstagram className="mx-3" size={25} />
           </Link>
