@@ -80,7 +80,7 @@ const Navbar = () => {
                 </div>
             </nav>
             {dropdown &&
-                <div className='dropdown' ref={ref}>
+                <div className='dropdown z-10' ref={ref}>
                     <div className="dropdownGrid mb-6">
                         <div className="dropdownchild">
                             <h3 className='fontsm font-semibold mb-4'>Software</h3>
