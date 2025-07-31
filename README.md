@@ -1,1 +1,1 @@
-A Microsoft Landing Page clone.
+A Landing Page clone of Microsoft.
